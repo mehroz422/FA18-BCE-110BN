@@ -11,9 +11,11 @@ const app = express();
 
 mongoose.connect(url,{useNewUrlParser: true, useUnifiedTopology: true}).then(()=> console.log("Connected to Database."));
 
-app.listen(5000);
 
+var port = process.env.PORT || 8080;
+app.listen(port);
 app.use(cors());
+
 
 app.use(bodyParser.json({extended: true}));
 
